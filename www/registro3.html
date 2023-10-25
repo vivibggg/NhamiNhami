@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro - Etapa 3</title>
+    <link rel="icon" href="images/logoicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/icon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro - Etapa 3</h1>
+        <p>Preencha os dados do perfil. Isso levará alguns minutos.</p>
+        <div class="card p-4" style="background-color: #CED8D1; border: #000000 1px solid;">
+            <h3><strong>Endereço de Entrega</strong></h3>
+            <div class="form-group">
+                <input type="text" class="form-control" id="address" placeholder="Endereço" name="address" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="city" placeholder="Cidade" name="city" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="State" placeholder="Estado" name="country" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="zipcode" placeholder="Código Postal" name="zipcode" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="mark" placeholder="Observações (opcional)" name="mark">
+            </div>
+            <button class="btn" id="saveData" style="background-color: #B6C8BC;">Continuar</button>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+    <script src="js/config.js"></script>
+    <script>
+        document.getElementById("saveData").addEventListener("click", function () {
+        var zipcodeFormate = /^\d{5}-\d{3}$/;
+            var output = "";
+            var address = document.getElementById("address").value;
+            var city = document.getElementById("city").value;
+            var state = document.getElementById("State").value;
+            var zipcode = document.getElementById("zipcode").value;
+            var mark = document.getElementById("mark").value;
+            if (address == "" || city == "" || state == "" || zipcode == "") {
+                alert("Por favor, preencha o formulário inteiro.");
+            } else {
+                if (!zipcode.match(zipcodeFormate)) {
+                    alert("Por favor, insira um código postal válido.");
+                } else {
+                    if (mark == "") {
+                        output = "default";
+                    } else {
+                        output = mark;
+                    }
+                    firebase.database().ref(sessionStorage.getItem("role")).push({
+                        username: sessionStorage.getItem("username"),
+                        mobilenumber: sessionStorage.getItem("mnumber"),
+                        email: sessionStorage.getItem("email"),
+                        password: sessionStorage.getItem("password"),
+                        region: sessionStorage.getItem("region"),
+                        address: address,
+                        city: city,
+                        state: state,
+                        zipcode: zipcode,
+                        mark: output
+                    }).then(() => {
+                        alert("Caro, " + sessionStorage.getItem("username") + " você foi registrado com sucesso!");
+                        sessionStorage.removeItem("email");
+                        sessionStorage.removeItem("password");
+                        sessionStorage.removeItem("region");
+                        window.location.href = "index.html";
+                    });
+                }
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Roboto:wght@300;400;700&amp;display=swap">
+
+     -->
+    <link rel="shortcut icon" href="images/NhamiPreta.png">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/homepage.css">
+    <link href="css/about.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <header class="section page-header">
+    
+        <div class="rd-navbar-wrap">
+            <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+                <div class="rd-navbar-main-outer">
+                    <div class="rd-navbar-main">
+                        
+                        <div class="rd-navbar-panel">
+                          
+                            <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                            
+                            <div class="rd-navbar-brand">
+                               <a class="brand" href="index.html"><img class="brand-logo-dark" src="images/NhamiPreta.png" alt="" width="200" height="67" loading="lazy"/><img class="brand-logo-light" src="images/NhamiPreta.png" alt="" width="200" height="67" loading="lazy"/></a>
+                            </div>
+                   <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Início</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Sobre</a>
+                      </li>
+                       <li class="rd-nav-item"><a class="rd-nav-link" href="feed.html">Feed</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="permission.html">Permissões</a></li>
+                    </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="#footer">Contato</a>
+                      </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="feedback.html">Feedback</a></li>
+                    </ul>
+                  </div>
+                </div>
+                            <div id="uStatus" class='menu-list-item btn-group'></div>
+                            <script>
+                                if(sessionStorage.getItem("username")){
+                                    document.getElementById("uStatus").innerHTML = '<div class="rd-navbar-aside"><button class="rd-navbar-btn btn btn-secondary" id="myProfile"><a href="NGO.html" style="color:white;">Meu Perfil</a></button></div><div class="px-4 rd-navbar-aside"><button class="rd-navbar-btn btn btn-primary"><a href="logout.html" style="color:white;">Sair</a></button></div>';
+                                }else{
+                                    document.getElementById("uStatus").innerHTML = '<div class="rd-navbar-aside rd-navbar-collapse"><button class="rd-navbar-btn btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal">Entrar</button></div>';
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    
+        <div class="container">
+            <div class="pt-5 m-auto row pb-5 mt-5">
+                <div class="col-sm-6">
+                    <h1 class="pb-5">Sobre Nós</h1>
+                    <h3 class="mb-3">Este site de gestão e doação de alimentos não consumidos foi criado com o objetivo de direcionar alimentos disponíveis, que de outra forma seriam desperdiçados, para pessoas que precisam. Como resultado, este aplicativo da web desempenha um papel essencial na redução do desperdício de alimentos, enquanto simultaneamente auxilia no fornecimento de alimentos a quem mais necessita.</h3>
+                    <div class="button">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <img src="images/Aboutus-Food.jpg" class="rounded-3 img-fluid">
+                </div>
+            </div>
+        </div>
+
+        <div class="aboutteam">
+            <div class="container py-5">
+                <div class="row text-center text-white">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="display-4">Sobre a Equipe</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row text-center justify-content-center">
+                   
+                    <div class="col-xl-3 col-sm-6 mb-5">
+                        <div class="bg-white rounded shadow-sm py-5 px-4"><img
+                                src="images/femininoAvatar.png" alt="" width="100"
+                                class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                            <h5 class="mb-0">Emely Almeida</h5>
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-xl-3 col-sm-6 mb-5">
+                        <div class="bg-white rounded shadow-sm py-5 px-4"><img
+                                src="images/masculinoAvatar.png" alt="" width="100"
+                                class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                            <h5 class="mb-0">Gabriel Komljam</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-sm-6 mb-5">
+                        <div class="bg-white rounded shadow-sm py-5 px-4"><img
+                                src="images/masculinoAvatar.png" alt="" width="100"
+                                class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                            <h5 class="mb-0">Guilherme Alexandre</h5>
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-xl-3 col-sm-6 mb-5">
+                        <div class="bg-white rounded shadow-sm py-5 px-4"><img
+                                src="images/femininoAvatar.png" alt="" width="100"
+                                class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                            <h5 class="mb-0">Vitoria Bagatin</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="background-image:url(images/background-item.png)">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Entrar</h4>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row row-20">
+                            <div class="col-sm-12">
+                                <div class="form-wrap">
+                                    <select class="form-control form-input shadow-none" name="" id="role">
+                                        <option class="form-label" value="" disabled selected>Quem é você?</option>
+                                        <option class="form-label" value="NGO">ONG</option>
+                                        <option class="form-label" value="Restaurant">Restaurante</option>
+                                        <option class="form-label" value="Caterer">Fornecedor de Buffet</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-wrap">
+                                    <input class="form-input" id="email" type="email" name="email" data-constraints="@Required @Email" placeholder="Email" pattern="[^@\s]+@[^@\s]+" title="Endereço de e-mail inválido" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class "form-wrap">
+                                    <input class="form-input" type="password" value="" id="pwd" data-constraints="@Required @Numeric" placeholder="Senha" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-button btn-group-1">
+                            <button class="btn btn-sm btn-primary" type="submit" id="signin">Entrar</button><small>Não está registrado?</small><a class="btn btn-sm btn-secondary" href="registro2.html"><span class="btn-icon fa fa-paypal"></span><span>Cadastrar</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="section footer-classic small" id="footer">
+            <div class="container">
+                <div class="row row-30">
+                    <div class="col-xs-7 col-md-5">
+                        <h4 class="footer-title">Contate-nos</h4>
+                        <ul class="list">
+                            <li>T: <a class="link-inherit" href="tel:#">(13) 98111-1111</a></li>
+                            <li>H: T-S: 7h - 15h, D-D: 8h - 15h</li>
+                            <li>L: etec adolpho berezin, mongagua, Brasil</li>
+                        </ul>
+                        <ul class="list">
+                            <li>E: <a href="mailto:#">vidasreciclaveis@gmail.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-5 col-md-2 col-lg-3">
+                        <h4 class="footer-title">Redes Sociais</h4>
+                        <ul class="list-md">
+                            <li><a class="link-secondary" href="#">Facebook</a></li>
+                            <li><a class="link-secondary" href="#">Instagram</a></li>
+                            <li><a class="link-secondary" href="#">Twitter</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5 col-lg-4">
+                        <h4 class "footer-title">Links</h4>
+                        <ul class="list-md">
+                            <li><a class="link-secondary" href="index.html">Início</a></li>
+                            <li><a class="link-secondary" href="about.html">Sobre</a></li>
+                            <li><a class="link-secondary" href="feed.html">Feed</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Recycling Lives</span><span>.&nbsp;</span><a class="link-secondary" href="#">Política de Privacidade</a></p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        
+        <script src="js/SignIn.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+        <script src="js/config.js"></script>
+
+        <script src="js/core.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

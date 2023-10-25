@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editar Perfil</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+    <script src="js/config.js"></script>
+</head>
+
+<body>
+    <ons-page id="edit-profile-page">
+        <ons-toolbar>
+            <div class="left">
+                <ons-back-button>Voltar</ons-back-button>
+            </div>
+            <div class="center">Editar Perfil</div>
+        </ons-toolbar>
+
+        <ons-list>
+            <ons-list-header>Detalhes do Perfil</ons-list-header>
+            <ons-list-item>
+                <ons-input id="name" modifier="underbar" placeholder="Nome" float required></ons-input>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-input id="region" modifier="underbar" placeholder="Região" float required></ons-input>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-input id="number" modifier="underbar" placeholder="Número de Telefone" float pattern="[7-9]{1}[0-9]{9}"
+                    title="Número de telefone com 7-9 e os 9 dígitos restantes de 0-9" required></ons-input>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-input id="email" modifier="underbar" placeholder="Email" float
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></ons-input>
+            </ons-list-item>
+        </ons-list>
+
+        <ons-list>
+            <ons-list-header>Endereço</ons-list-header>
+            <ons-list-item>
+                <ons-input id="address" modifier="underbar" placeholder="Endereço" float required></ons-input>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-input id="city" modifier="underbar" placeholder="Cidade" float required></ons-input>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-input id="state" modifier="underbar" placeholder="Estado" float required></ons-input>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-input id="zipcode" modifier="underbar" placeholder="CEP" float pattern="[0-9]{6}"
+                    title="CEP de cinco dígitos" required></ons-input>
+            </ons-list-item>
+        </ons-list>
+
+        <ons-list>
+            <ons-list-header>Outras Informações</ons-list-header>
+            <ons-list-item>
+                <ons-input id="mark" modifier="underbar" placeholder="Marcas Específicas (Opcional)" float></ons-input>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-input id="password" modifier="underbar" placeholder="Nova Senha" float type="password"></ons-input>
+            </ons-list-item>
+        </ons-list>
+
+        <ons-button modifier="large" id="saveBtn">Salvar</ons-button>
+    </ons-page>
+
+    <script src="js/rcEditProfile.js"></script>
+</body>
+
+</html>

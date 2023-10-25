@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logoicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo.jpg">
+    <title>Perfil da ONG</title>
+
+    <!-- CSS Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Scripts JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/config.js"></script>
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/homepage.css">
+
+    <style>
+        .status-itm {
+            align-items: center;
+        }
+        @media (max-width: 992px) {
+            .itm {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            .status-itm {
+                align-items: flex-start;
+            }
+            .action-btn {
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="section page-header">
+        <div class="rd-navbar-wrap">
+            <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                <!-- Seu menu de navegação aqui -->
+            </nav>
+        </div>
+    </header>
+
+    <section class="section section-md bg-secondary-lightest-1 p-5">
+        <div class="mb-4">
+            <button class="btn btn-secondary" onclick="window.location.replace('index.html'); return false;">Voltar</button>
+        </div>
+        <div class="container-fluid" style="background-color: #E5E5E5;">
+            <div class="row d-flex flex-column align-items-center text-center" style="margin-bottom: 10vh;">
+                <div>
+                    <p class="fw-bold fs-1 mt-5" id="ngoname">Nome da ONG</p>
+                    <p class="mt-3 fw-lighter">Área de onde estão fazendo doações</p>
+                </div>
+                <div class="mt-5 d-flex justify-content-evenly flex-wrap" style="width: 70vw;">
+                    <a href="ngoEditProfile.html">
+                        <button class="btn btn-outline-dark action-btn" style="width:200px;">Editar Perfil</button>
+                    </a>
+                </div>
+            </div>
+    
+            <div class="row px-5" style="margin-top: 10vh;">
+                <div class="col-lg-4 col-md-12 d-flex flex-column text-center">
+                    <h1 class="fw-bold" style="font-size: 3rem;" id="NoOfFeed">00</h1>
+                    <p class="fs-5">Número de pessoas alimentadas</p>
+                </div>
+                <div class="col-lg-4 col-md-12 d-flex flex-column text-center">
+                    <h1 class="fw-bold" style="font-size: 3rem;" id="numOfDdone">00</h1>
+                    <p class="fs-5">Número de entregas feitas</p>
+                </div>
+                <div class="col-lg-4 col-md-12 d-flex flex-column text-center">
+                    <h1 class="fw-bold" style="font-size: 3rem;" id="numOfFailed">00</h1>
+                    <p class="fs-5">Número de entregas falhadas</p>
+                </div>
+            </div>
+    
+            <div class="row px-4 mt-4" id="ex-table">
+                <!-- Sua tabela aqui -->
+            </div>
+        </div>
+    </section>
+    
+    <footer class="section footer-classic small" id="footer">
+        <div class="container">
+            <!-- Seu rodapé aqui -->
+        </div>
+    </footer>
+
+    <script src="js/NGO.js"></script>
+    
+    <!-- Bootstrap 5 Bundle com Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    
+    <!-- Seus scripts personalizados -->
+    <script src="js/script.js"></script>
+    
+    <link rel="stylesheet" href="css/feed.css">
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logoicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logoicon.svg">
+    <title>Perfil da ONG</title>
+
+    <!-- CSS Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Scripts JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/config.js"></script>
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/homepage.css">
+
+    <style>
+        .status-itm {
+            align-items: center;
+        }
+        @media (max-width: 992px) {
+            .itm {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            .status-itm {
+                align-items: flex-start;
+            }
+            .action-btn {
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="section page-header">
+        <div class="rd-navbar-wrap">
+            <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                <!-- Seu menu de navegação aqui -->
+            </nav>
+        </div>
+    </header>
+
+    <section class="section section-md bg-secondary-lightest-1 p-5">
+        <div class="mb-4">
+            <button class="btn btn-secondary" onclick="window.location.replace('index.html'); return false;">Voltar</button>
+        </div>
+        <div class="container-fluid" style="background-color: #E5E5E5;">
+            <div class="row d-flex flex-column align-items-center text-center" style="margin-bottom: 10vh;">
+                <div>
+                    <p class="fw-bold fs-1 mt-5" id="ngoname">Nome da ONG</p>
+                    <p class="mt-3 fw-lighter">Área de onde estão fazendo doações</p>
+                </div>
+                <div class="mt-5 d-flex justify-content-evenly flex-wrap" style="width: 70vw;">
+                    <a href="ngoEditProfile.html">
+                        <button class="btn btn-outline-dark action-btn" style="width:200px;">Editar Perfil</button>
+                    </a>
+                </div>
+            </div>
+    
+            <div class="row px-5" style="margin-top: 10vh;">
+                <div class="col-lg-4 col-md-12 d-flex flex-column text-center">
+                    <h1 class="fw-bold" style="font-size: 3rem;" id="NoOfFeed">00</h1>
+                    <p class="fs-5">Número de pessoas alimentadas</p>
+                </div>
+                <div class="col-lg-4 col-md-12 d-flex flex-column text-center">
+                    <h1 class="fw-bold" style="font-size: 3rem;" id="numOfDdone">00</h1>
+                    <p class="fs-5">Número de entregas feitas</p>
+                </div>
+                <div class="col-lg-4 col-md-12 d-flex flex-column text-center">
+                    <h1 class="fw-bold" style="font-size: 3rem;" id="numOfFailed">00</h1>
+                    <p class="fs-5">Número de entregas falhadas</p>
+                </div>
+            </div>
+    
+            <div class="row px-4 mt-4" id="ex-table">
+                <!-- Sua tabela aqui -->
+            </div>
+        </div>
+    </section>
+    
+    <footer class="section footer-classic small" id="footer">
+        <div class="container">
+            <!-- Seu rodapé aqui -->
+        </div>
+    </footer>
+
+    <script src="js/NGO.js"></script>
+    
+    <!-- Bootstrap 5 Bundle com Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    
+    <!-- Seus scripts personalizados -->
+    <script src="js/script.js"></script>
+    
+    <link rel="stylesheet" href="css/feed.css">
+</body>
+</html>
